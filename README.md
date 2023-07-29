@@ -1,1 +1,1 @@
-this is my practice for system engineering devops
+this contains avery detailed explaination of the codes i used in my printf project
