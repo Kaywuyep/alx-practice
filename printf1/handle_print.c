@@ -27,7 +27,8 @@ int handle_print(const char *format, va_list list, int i, char buffer[],
 		if (format[i] == f_types[j].fmt)
 		{/* Call the printing funct for the specifier and get num of printed char*/
 			printed_chars = f_types[j].fn(list, buffer, flags, width, precision, size);
-			break; /*Exit the loop as the specifier is found*/
+			return (printed_chars); /*Return the num of char for the known specifier*/
+			/*break; Exit the loop as the specifier is found*/
 		}
 	}
 	if (f_types[j].fmt == '\0')/*if specifr is not found(unkwown specifier*/
@@ -38,7 +39,7 @@ int handle_print(const char *format, va_list list, int i, char buffer[],
 			unknow_len += _putchar('\0'); /*Print the null char at the end of fmt str*/
 		}
 		else
-		{/* Print any preceding flags or width char before the unknown specifier */
+		{	/* Print any preceding flags or width char before the unknown specifier */
 			if (format[i - 1] == ' ')
 				unknow_len += _putchar(' '); /*Print a space character*/
 			else if (width)
@@ -53,5 +54,4 @@ int handle_print(const char *format, va_list list, int i, char buffer[],
 			unknow_len += _putchar(format[i]); /* Print the unknown specifier char*/
 		}
 		return (unknow_len); /*the num of char printd for the unknown specifier*/
-		return (printed_chars); /*Return the num of char for the known specifier*/
 }

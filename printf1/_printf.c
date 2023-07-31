@@ -32,14 +32,14 @@ int _printf(const char *format, ...)
 			print_buffer(buffer, &buff_ind);/*clear the buffer first*/
 			/*process the format specifies to be encounterd*/
 			flags = flag(format, &i);/*retrieve any flag specified eg. '+', '-'*/
-				width = Width(format, &i. list);/*handles field width specified eg."%10d"*/
+				width = Width(format, &i, list);/*handles field width specified eg."%10d"*/
 				precision = precisions(format, &i, list);/*handles precisn specifd "%.3f"*/
 				size = Size(format, &i);/*specifier to modify any data size to be prnted*/
 				++i;
 				/*handle the printing of formatted data specified*/
 				printed = handle_print(format, &i, list, buffer, flags,
 						width, precision, size);
-				if (printed == -1)/*check if there is any error was encountered*/
+				if (printed < 1)/*check if there is any error was encountered*/
 					return (-1);/*if an err was encounted return*/
 				printed_chars += printed;/*update number of chars printed*/
 		}
