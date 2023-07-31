@@ -19,7 +19,6 @@
 
 /**
  * struct fmt - Struct op
- *
  * @fmt: The format.
  * @fn: The function associated.
  */
@@ -32,7 +31,6 @@ struct fmt
 
 /**
  * typedef struct fmt f_typ - Struct op
- *
  * @fmt: The format.
  * @fm_t: The function associated.
  */

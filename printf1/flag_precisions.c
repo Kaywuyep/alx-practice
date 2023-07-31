@@ -4,7 +4,6 @@
  * flag - Calculates active flags from the format string
  * @format: Formatted string in which to find the flags
  * @i: Pointer to the index in the format string
- *
  * Return: Flags calculated based on the encountered flag characters
  */
 int flag(const char *format, int *i)
@@ -47,7 +46,6 @@ int flag(const char *format, int *i)
  * @format: Formatted string in which to find the precision value
  * @i: Pointer to the index in the format string
  * @list: Variable argument list containing the additional arguments
- *
  * Return: Precision value as an integer
  */
 int precisions(const char *format, int *i, va_list list)
