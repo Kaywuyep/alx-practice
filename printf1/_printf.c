@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				/*handle the printing of formatted data specified*/
 				printed = handle_print(format, &i, list, buffer, flags,
 						width, precision, size);
-				if (printed == -1)/*check if there is any error was encountered*/
+				if (printed < 1)/*check if there is any error was encountered*/
 					return (-1);/*if an err was encounted return*/
 				printed_chars += printed;/*update number of chars printed*/
 		}
