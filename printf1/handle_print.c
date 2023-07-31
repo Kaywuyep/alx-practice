@@ -51,7 +51,7 @@ int handle_print(const char *format, va_list list, int i, char buffer[],
 				return (1); /*Return 1 to indicate processing the width*/
 			}
 			unknow_len += _putchar(format[i]); /* Print the unknown specifier char*/
-		}
 		return (unknow_len); /*the num of char printd for the unknown specifier*/
+		}
 		return (printed_chars); /*Return the num of char for the known specifier*/
 }

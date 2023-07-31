@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <unistd.h>
 
 #define BUFF_SIZE 1024
 #define UNUSED(x)(void)(x)
@@ -31,12 +32,12 @@ struct fmt
 
 
 /**
- * typedef struct fmt f_typ - Struct op
+ * typedef struct fmt f_types - Struct op
  *
  * @fmt: The format.
  * @fm_t: The function associated.
  */
-typedef struct fmt f_typ;
+typedef struct fmt f_types;
 
 int _printf(const char *format, ...);
 void print_buffer(char buffer[], int *buff_ind);
@@ -45,6 +46,7 @@ int Width(const char *format, int *i, va_list list);
 int precisions(const char *format, int *i, va_list list);
 int Size(const char *format, int *i);
 int handle_print(const char *format, int *i, va_list list, char buffer[],
-	int flags, int width, int precision, int size
+	int flags, int width, int precision, int size);
+int _putchar(char c);
 
 #endif
